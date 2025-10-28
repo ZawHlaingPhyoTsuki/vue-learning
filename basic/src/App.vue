@@ -13,6 +13,8 @@
 // };
 import { ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import ParentComponent from "./components/ParentComponent.vue";
+import GettingDataWithFetch from "./components/GettingDataWithFetch.vue";
 let count = ref(0);
 
 // let count1 = 0;
@@ -22,7 +24,7 @@ let people = ref(["AAA", "BBB", "CCC"]);
 </script>
 
 <template>
-<div>
+  <div>
     <!-- <div>
     <h1>{{ message }}</h1>
     <h1>{{ number }}</h1>
@@ -44,16 +46,18 @@ let people = ref(["AAA", "BBB", "CCC"]);
       Add One More User
     </button>
   </div> -->
-  <h1>Count: {{ count }}</h1>
-  <button @click="count++">Increment</button>
-  <button @click="count--">Decrement</button>
+    <h1>Count: {{ count }}</h1>
+    <button @click="count++">Increment</button>
+    <button @click="count--">Decrement</button>
 
-  <!-- <h1>Count1: {{ count1 }}</h1>
+    <!-- <h1>Count1: {{ count1 }}</h1>
   <button @click="count1++">Increment</button>
   <button @click="count1--">Decrement</button> -->
-  <div>
-    <p v-for="(person, index) in people" :key="index">{{ person }}</p>
+    <div>
+      <p v-for="(person, index) in people" :key="index">{{ person }}</p>
+    </div>
+    <HelloWorld />
+    <ParentComponent />
+    <GettingDataWithFetch />
   </div>
-  <HelloWorld/>
-</div>
 </template>
